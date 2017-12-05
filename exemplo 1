@@ -1,0 +1,25 @@
+// example: one class, two objects
+#include <iostream> // necessária para poder escrever o código
+using namespace std; //a partir de agora nao precisa escrever std:: na frente dos comandos que à necessitavam 
+
+
+class Rectangle {                    //Cria a classe rectangle ; inicio da classe   rectangle 
+	int width, height;               //faz com que width e height se tornem variáveis (no caso variaveis com valores inteiros)
+public:                            //torna essa parte da classe pública, ou seja, acessivel em outras linhas de comando fora da classe)
+	void set_values(int, int);       //void é um ponteiro que não precisa retornar valor; criou a função set_values (int,int);
+	int area() { return width * height; }  // criou a função area e retornará widght*height
+};                                       // fim da classe rectangle. 
+
+void Rectangle::set_values(int x, int y) {           //evoca a classe rectangle; ::evoca a função set_values() e agora diz q ela armazena (x,y)
+	width = x										//variavel widht igual a varial x
+	height = y										// variavel height igual a variavel y
+}
+
+int main() {										//cria a função main(); inicio da função main
+	Rectangle rect, rectb;							//evoca a classe  e cria as variaveis rect e rectb
+	rect.set_values(3, 4);							//rect usurá a função set_values, armazenando 3 e 4
+	rectb.set_values(5, 6);							//rectb usará a função set_values, armazenando 5 e 6
+	cout << "rect area: " << rect.area() << endl;	
+	cout << "rectb area: " << rectb.area() << endl;
+	return 0;
+}
